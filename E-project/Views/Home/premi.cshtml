@@ -1,0 +1,84 @@
+﻿@using E_project.Models
+@model my
+
+@{
+    ViewData["Title"] = "premi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>premi</h1>
+
+
+@{
+    ViewBag.Title = "preminum";
+}
+
+<div class="col-md-4">
+    <label for="validationDefault01" for="PolicyName" class="form-label">Choose Policy</label>
+    <select class="form-control" for="PolicyName" id="validationDefault01" placeholder="life/health" required>
+        <option value="life">Life</option>
+        <option value="health">Health</option>
+        <option value="motor">Motor</option>
+        <option value="home">Home</option>
+    </select>
+</div>
+
+<br />
+br
+<fieldset>
+    <legend>Calculate Your premimun</legend>
+
+
+
+    <form asp-action="premi" asp-controller="home">
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+
+        <table class="table table-hover " border="1">
+
+            <tr>
+                <td>Enter your age</td>
+                <td>@Html.TextBox("age", "", new { @class = "text-primary" })</td>
+
+            </tr>
+
+            <tr>
+                <td>Policy Sum Assured</td>
+                <td>@Html.TextBox("num1", "", new { @class = "text-primary" }) <b></b></td>
+
+            </tr>
+            <tr>
+                <td>Premium paybal</td>
+                <td>
+
+                    @Html.DropDownList("Category",
+                             new SelectList(Enum.GetValues(typeof(E_project.Models.my.categ))),
+                             "Select Category",
+                             new { @class = "form-control" })
+
+
+                </td>
+
+
+            </tr>
+
+
+            <tr>
+                <td colspan="2"><button type="submit" class="btn btn-success" style="margin-left:400px;">calculate</button></td>
+                <td colspan="2"><button type="submit" class="btn btn-success" style="margin-left:400px;">@ViewBag.rs</button></td>
+            </tr>
+
+
+        </table>
+
+
+
+    </form>
+
+
+
+
+
+</fieldset>

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "approvepolicy";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<main class="main" role="main">
+
+    <h1>Send an approval email</h1>
+    <div class="container">
+        <form method="post" asp-action="Index">
+            <div class="mb-3">
+                <label or="Emailaddress" class="form-label">Email address</label>
+                <input type="email"for="Emailaddress" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Message</label>
+                <input type="text" name="msg" class="form-control" id="exampleInputPassword1" >
+            </div>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+           
+        </form>
+         @ViewBag.returnmsg
+    </div>
+</main>

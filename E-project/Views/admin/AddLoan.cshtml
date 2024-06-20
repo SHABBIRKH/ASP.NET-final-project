@@ -1,0 +1,53 @@
+﻿@using Microsoft.EntityFrameworkCore.Storage
+@model E_project.Models.Createloan
+@{
+    ViewData["Title"] = "AddLoan";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+
+<main id="main" class="main">
+
+
+
+    <section class="section">
+        <div class="row">
+
+
+            <div class="card-body">
+                <h5 class="card-title">Browser Default</h5>
+                <p>Browser default validation with using the <code>required</code> keyword. Try submitting the form below. Depending on your browser and OS, you’ll see a slightly different style of feedback.</p>
+
+                <!-- Browser Default Validation -->
+                <form class="row g-3" method="post" enctype="multipart/form-data">
+                    <div class="col-md-4">
+                        <label for="validationDefault01" asp-for="Loanname" class="form-label">Loan Name</label>
+                        <input type="text"  asp-for="Loanname" class="form-control" id="validationDefault01" placeholder="life/health" required />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="validationDefaultUsername" asp-for="Totalamount" class="form-label">Total Amount</label>
+                        <input type="text" class="form-control" asp-for="Totalamount" id="validationDefault01" placeholder="10,000" required />
+                    </div>
+                  
+                    <div class="col-md-3">
+                        <label for="validationDefault04" asp-for="Totalduration" class="form-label">Total Duration</label>
+                        <input type="text" class="form-control" asp-for="Totalduration" id="validationDefault05" placeholder="6 mounths" required />
+                    </div>
+                    <div class="col-12">
+                        <input type="submit" class="btn btn-primary"  value="Submit form">
+                    </div>
+                </form>
+                <!-- End Browser Default Validation -->
+
+            </div>
+        </div>
+
+    </section>
+</main>
+
+
+
+
+
+

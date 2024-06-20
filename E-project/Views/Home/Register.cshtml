@@ -1,0 +1,50 @@
+﻿@model User
+@{
+
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container-fluid appointment my-5 py-3 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                <h1 class="display-6 text-white mb-5">Register Yourself</h1>
+                <p class="text-white mb-5">Become our permanent customer to get the latest news about policies latest news and also get a chance to avail our premiums.</p>
+               
+                </div>
+            </div>
+            <div class="wow fadeIn" data-wow-delay="0.5s">
+                <div class="bg-white rounded p-5">
+                    <form method="post">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="text" asp-for="Username" class="form-control">
+                                <label asp-for="Username">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="email" asp-for="Email" class="form-control">
+                                <label asp-for="Email">Your Email</label>
+                                <span asp-validation-for="Email" class="text-danger">@ViewBag.error</span>
+                                </div>
+                            </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="password" asp-for="Password" class="form-control">
+                                <label asp-for="Password">Your Password</label>
+                            </div>
+                        </div>
+                            <div class="col-12">
+                            <input class="btn btn-primary py-3 px-5" type="submit" value="Register">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

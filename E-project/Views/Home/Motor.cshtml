@@ -1,0 +1,73 @@
+﻿@model IEnumerable<E_project.Models.MotorPolicy>
+
+@{
+    ViewData["Title"] = "Life";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<h1>Motor Insurance</h1>
+
+@if (User.Identity.Name == null)
+{
+    <h5 class="text-danger">you can only avail our policies if you're our permanent user. please register so you can continure further.already registered:login to continure then.</h5>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Details)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EffectiveDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpirationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreationDate)
+                </th>
+                <th>
+
+                    @Html.DisplayNameFor(model => model.Premium)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Details)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EffectiveDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpirationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Premium)
+                    </td>
+
+                    <td> <button class="btn btn-primary"><a asp-controller="home" asp-action="availpolicy" class="text-light">Avail</a></button></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+}

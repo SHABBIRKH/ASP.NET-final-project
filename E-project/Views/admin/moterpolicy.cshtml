@@ -1,0 +1,57 @@
+﻿@model MotorPolicy
+@{
+    ViewData["Title"] = "moterpolicy";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<main id="main" class="main">
+
+
+
+    <h1>Moter Policy</h1>
+
+    <section class="section">
+        <div class="row">
+
+
+            <div class="card-body">
+
+                <!-- Browser Default Validation -->
+                <form class="row g-3" method="post" enctype="multipart/form-data">
+
+                    <div class="col-md-4">
+                        <label for="validationDefault02" asp-for="Details" class="form-label">Policy Details</label>
+                        <textarea class="form-control" asp-for="Details" id="validationDefault02" placeholder="information about your insurance" required></textarea>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefaultUsername" asp-for="EffectiveDate" class="form-label">Effective Date</label>
+                        <input type="datetime-local" asp-for="EffectiveDate" id="" required />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefaultUsername" asp-for="ExpirationDate" class="form-label">Expiration Date</label>
+                        <input type="datetime-local" id="" asp-for="ExpirationDate" required />
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationDefault04" asp-for="CreatedBy" class=" form-label">Created By</label>
+                        <input type="text" class="form-control" asp-for="CreatedBy" id=" validationDefault05" placeholder="creator of the plan" required />
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationDefault05" asp-for="CreationDate" class="form-label">Created Date</label>
+                        <input type="datetime-local" asp-for="CreationDate" id="" required />
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationDefault05" asp-for="Premium" class="form-label">PolicyAmount</label>
+                        <input type="number" asp-for="Premium" id="" required />
+                    </div>
+
+                    <div class="col-12">
+                        <input type="submit" class="btn btn-primary" value="AddPolicy">
+                    </div>
+                </form>
+                <!-- End Browser Default Validation -->
+
+            </div>
+        </div>
+
+    </section>
+</main>

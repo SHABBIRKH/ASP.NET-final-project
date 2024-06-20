@@ -1,0 +1,89 @@
+﻿@model IEnumerable<E_project.Models.Holderspolicy>
+@{
+    ViewData["Title"] = "policyholderslist";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h1>policyholderslist</h1>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Policy Holders List</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Users List</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Users</h5>
+
+
+                        <!-- Table with stripped rows -->
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th> @Html.DisplayNameFor(model => model.Id) </th>
+                                    <th> @Html.DisplayNameFor(model => model.Firstname)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Lastname)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Dateofbirth)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Gender)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Cardno)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Cardexp)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Address)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Emailaddress)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Phoneno)</th>
+
+
+                                    <th>Approve</th>
+                                    <th>Reject</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td> @Html.DisplayFor(modelItem => item.Id)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Firstname)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Lastname)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Dateofbirth)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Gender)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Cardno)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Cardexp)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Address)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Emailaddress)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Phoneno)</td>
+                                        <td>
+                                            <a class="dropdown-item d-flex align-items-center" asp-action="approvepolicy" asp-route-id="@item.Id">
+                                                <button type="button" class="btn btn-success"><i class="bi bi-check-circle me-1"></i>Approve</button>
+                                            </a>
+                                        </td>
+                                        <td>
+
+                                            <a class="dropdown-item d-flex align-items-center" asp-action="deletemotorpolicy" asp-route-id="@item.Id">
+                                                <button type="button" class="btn btn-danger"><i class="bi bi-exclamation-octagon me-1"></i> Reject</button>
+
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

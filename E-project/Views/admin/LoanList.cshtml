@@ -1,0 +1,117 @@
+﻿@model IEnumerable<E_project.Models.AppyLoan>
+
+@{
+    ViewData["Title"] = "LoanList";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Data Tables</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Loans</li>
+                <li class="breadcrumb-item active">Loan List</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Approvel Loan List</h5>
+
+
+                        <!-- Table with stripped rows -->
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th> @Html.DisplayNameFor(model => model.Id) </th>
+                                    <th> @Html.DisplayNameFor(model => model.FirstName)</th>
+                                    <th> @Html.DisplayNameFor(model => model.LastName)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Age)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Cnicno)</th>
+                                    <th> @Html.DisplayNameFor(model => model.IssueDate)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Expiredat)</th>
+                                    <th> @Html.DisplayNameFor(model => model.PermentAddress)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Dob)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Email)</th>
+                                    <th> @Html.DisplayNameFor(model => model.ContactNo)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Gender)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Occupation)</th>
+                                    <th> @Html.DisplayNameFor(model => model.WhyYouWantLoan)</th>
+                                    <th> @Html.DisplayNameFor(model => model.AmountIntrest)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Duration)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Photo)</th>
+                                    <th> @Html.DisplayNameFor(model => model.CnicPhoto)</th>
+                                    <th> @Html.DisplayNameFor(model => model.ApprovelStatus)</th>
+
+
+
+                                    <th>Approve</th>
+                                    <th>Reject</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var items in Model)
+                                {
+                                    <tr>
+
+                                        <td> @Html.DisplayFor(modelItem => items.Id)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.FirstName)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.LastName)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.Age)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.Cnicno)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.IssueDate)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.Expiredat)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.PermentAddress)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.Dob)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.Email)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.ContactNo)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.Gender)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.Occupation)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.WhyYouWantLoan)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.AmountIntrest)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.Duration)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.Photo)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.CnicPhoto)</td>
+                                        <td> @Html.DisplayFor(modelItem => items.ApprovelStatus)</td>
+
+
+
+
+                                        <td>
+                                            <a class="dropdown-item d-flex align-items-center" asp-action="UpdateLoan" asp-route-id="@items.Id">
+                                                <button type="button" class="btn btn-success"><i class="bi bi-check-circle me-1"></i>Approve</button>
+                                            </a>
+                                        </td>
+                                        <td>
+
+                                            <a class="dropdown-item d-flex align-items-center" asp-action="deleteLoan" asp-route-id="@items.Id">
+                                                <button type="button" class="btn btn-danger"><i class="bi bi-exclamation-octagon me-1"></i> Reject</button>
+
+                                            </a>
+                                        </td>
+
+
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

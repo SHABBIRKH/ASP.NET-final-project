@@ -1,0 +1,81 @@
+﻿@model IEnumerable<E_project.Models.HealthPolicy>
+@{
+    ViewData["Title"] = "healthpolicylist";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h1>healthpolicylist</h1>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Data Tables</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Policys List</li>
+                <li class="breadcrumb-item active">Policys</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">health-Policies</h5>
+
+                        <a asp-action="healthpolicy">
+                            <button type="button" class="btn btn-primary mb-2"><i class="bi bi-folder "> </i>Add Policy</button>
+                        </a>
+                        <!-- Table with stripped rows -->
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th> @Html.DisplayNameFor(model => model.Id)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Details)</th>
+                                    <th data-type="date" data-format="YYYY/DD/MM">@Html.DisplayNameFor(model => model.EffectiveDate)</th>
+                                    <th>@Html.DisplayNameFor(model => model.ExpirationDate)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Premium)</th>
+
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td> @Html.DisplayFor(modelItem => item.Id)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Details)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.EffectiveDate)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.ExpirationDate)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Premium)</td>
+                                        <td>
+                                            <a class="dropdown-item d-flex align-items-center" asp-action="UpdatehealthPolicy" asp-route-id="@item.Id">
+                                                <button type="button" class="btn btn-success"><i class="bi bi-check-circle me-1"></i>Update</button>
+                                            </a>
+                                        </td>
+                                        <td>
+
+                                            <a class="dropdown-item d-flex align-items-center" asp-action="DeletehealthPolicy" asp-route-id="@item.Id">
+                                                <button type="button" class="btn btn-danger"><i class="bi bi-exclamation-octagon me-1"></i> Delete</button>
+
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

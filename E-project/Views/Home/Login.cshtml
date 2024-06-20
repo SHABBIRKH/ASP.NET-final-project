@@ -1,0 +1,40 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid appointment my-5 py-3 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeIn text-center" data-wow-delay="0.3s" style="display:flex">
+                <h1 class="display-6 text-white mb-4">Welcome! Please Login to continue:</h1>
+            </div>
+        </div>
+        <div class="wow fadeIn" data-wow-delay="0.5s">
+            <div class="bg-white rounded p-5">
+                <form method="post">
+                    <div class="row g-3">
+                 
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="email" asp-for="Email" class="form-control" >
+                                <label asp-for="Email">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="password" asp-for="Password" class="form-control" id="gmail" placeholder="Gurdian Email">
+                                <label for="Password" asp-for="Password">Your Password</label>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-between">
+                            <button class="btn btn-primary py-2 px-5" type="submit">Login</button>
+                            <a asp-controller="Home" asp-action="Register">Dont have an account yet?</a>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

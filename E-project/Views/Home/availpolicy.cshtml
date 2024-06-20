@@ -1,0 +1,160 @@
+﻿@model Holderspolicy
+
+@{
+    ViewData["Title"] = "availpolicy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* <p>@ViewBag.message</p> *@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Insurance Policy  Form</h3>
+                        <form class="row g-3" method="post" enctype="multipart/form-data">
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div data-mdb-input-init class="form-outline">
+                                        <label for="validationDefault01" asp-for="Firstname" class="form-label">First Name</label>
+                                        <input type="text" id="firstName" asp-for="Firstname" class="form-control form-control-lg" />
+                                      
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div data-mdb-input-init class="form-outline">
+                                        <label class="form-label" asp-for="Lastname">Last Name</label>
+                                        <input type="text" id="lastName" asp-for="Lastname" class="form-control form-control-lg" />
+                                   
+                                    </div>
+
+                                </div>
+                            </div>
+
+                         
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                                    <div data-mdb-input-init class="form-outline datepicker w-100">
+                                        <label for="birthdayDate" asp-for="Dateofbirth" class="form-label">Date of Birth</label>
+                                        <input type="date" class="form-control form-control-lg" asp-for="Dateofbirth" id="birthdayDate" />
+                                     
+                                    </div>
+
+                                </div>
+                                
+           @*                          <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                                        <div data-mdb-input-init class="form-outline datepicker w-100">
+                                            <label for="birthdayDate" asp-for="Gender" class="form-label">gender</label>
+                                            <input type="text" class="form-control form-control-lg" asp-for="Gender" id="birthdayDate" />
+
+                                        </div>
+
+                                    </div> *@
+                                <div class="col-md-6 mb-4">
+
+                                    <h6 class="mb-2 pb-1">Gender: </h6>
+
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" asp-for="Gender">Female</label>
+                                        <input class="form-check-input" type="radio" asp-for="Gender"  id="femaleGender"
+                                               value="option1" checked />
+                                        
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" asp-for="Gender">Male</label>
+                                        <input class="form-check-input" type="radio" asp-for="Gender"  id="maleGender"
+                                               value="option2" />
+                                        
+                                    </div>
+
+                                    
+
+                                </div>
+
+                             
+                                    <div class="col-md-6 mb-4 pb-2">
+
+                                        <div data-mdb-input-init class="form-outline">
+                                            <label for="validationDefault02" asp-for="Cardno" class="form-label">Enter Card No </label>
+                                            <input type="tel" id="" asp-for="Cardno" class="form-control form-control-lg" / required >
+                                        </div>
+
+                                    </div>
+
+                       
+
+                               
+                                    <div class="col-md-6 mb-4 pb-2">
+
+                                        <div data-mdb-input-init class="form-outline">
+                                            <label for="validationDefault02" asp-for="Cardexp" class="form-label"> Card Expire  </label>
+                                            <input type="tel" id="" asp-for="Cardexp" class="form-control form-control-lg" / required>
+                                        </div>
+
+                                    </div>
+                           
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div data-mdb-input-init class="form-outline">
+                                        <label for="validationDefault02" asp-for="Address" class="form-label">Address </label>
+                        <textarea class="form-control" id="validationDefault02" asp-for="Address" placeholder="xyz" required></textarea>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div data-mdb-input-init class="form-outline">
+                                        <label class="form-label" asp-for="Emailaddress">Email</label>
+                                        <input type="email" id="emailAddress" asp-for="Emailaddress" class="form-control form-control-lg" />
+                                        
+                                    </div>
+
+                                </div> 
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div data-mdb-input-init class="form-outline">
+                                        <label class="form-label" asp-for="Phoneno">Phone Number</label>
+                                        <input type="tel" asp-for="Phoneno" id="phoneNumber" class="form-control form-control-lg" />
+                                       
+                                    </div>
+
+                                </div>
+                            
+
+                          @*   <div class="row">
+                                <div class="col-12">
+
+                                    <select class="select form-control-lg">
+                                        <option value="life" disabled>Choose option</option>
+                                        <option value="health">health</option>
+                                        <option value="motor">motor</option>
+                                        <option value="home">Home</option>
+                                    </select>
+                                    <label class="form-label select-label">Choose option</label>
+
+                                </div>
+                            </div> *@
+
+                            <div class="mt-4 pt-2">
+                                <input data-mdb-ripple-init class="btn btn-primary btn-lg" type="submit" value="Buy Policy" />
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

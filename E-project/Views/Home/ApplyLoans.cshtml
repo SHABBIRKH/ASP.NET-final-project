@@ -1,0 +1,171 @@
+﻿@using Microsoft.EntityFrameworkCore.Storage
+@model E_project.Models.AppyLoan
+@{
+    ViewData["Title"] = "ApplyLoans";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ApplyLoans</h1>
+
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+
+
+        <h1 class="display-6 mb-5">If You Have Any Query, Please Contact Us</h1>
+        <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+        <form asp-action="ApplyLoans" METHOD="post" enctype="multipart/form-data">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="FirstName" id="name" placeholder="Your Name">
+                        <label asp-for="FirstName">First Name</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="LastName" id="email" placeholder="Your Email">
+                        <label asp-for="LastName">Last name</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="Cnicno" id="subject" placeholder="Subject">
+                        <label asp-for="Cnicno">Cnic NO</label>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" asp-for="IssueDate" id="subject" placeholder="Subject">
+                        <label asp-for="IssueDate">Issue Date </label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" asp-for="Expiredat" id="subject" placeholder="Subject">
+                        <label asp-for="Expiredat">Expire Date </label>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="PermentAddress" id="subject" placeholder="Subject">
+                        <label asp-for="PermentAddress">Perment Address  </label>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" asp-for="Dob" id="subject" placeholder="Subject">
+                        <label asp-for="Dob">DOB </label>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="Age" id="subject" placeholder="Subject" required>
+                        <label asp-for="Age">Age </label>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" asp-for="Email" id="subject" placeholder="Subject" required>
+                        <label asp-for="Email">Email </label>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="ContactNo" id="subject" placeholder="Subject" required>
+                        <label asp-for="ContactNo"> Contact No </label>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <select class="form-control" asp-for="Gender" id="gender">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="Occupation" id="subject" placeholder="Subject" required>
+                        <label asp-for="Occupation"> Occupation </label>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <select class="form-control" asp-for="WhyYouWantLoan" id="WhydoyouwantLoan">
+                            <option value="">Why do you want Loan?</option>
+                            <option value="Education">Education</option>
+                            <option value="Business">Business</option>
+                            <option value="others">Others</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <select class="form-control" asp-for="AmountIntrest" id="Amount_intrest">
+                            <option value="">Select Amount + intrest%</option>
+                            <option value="20,000">20,000 + 3%</option>
+                            <option value="50,000">50,000 + 5%</option>
+                            <option value="100,000">100,000 + 8%</option>
+                            <option value="120,000">120,000 + 10%</option>
+                            <option value="150,000">150,000 + 10%</option>
+                            <option value="200,000">200,000 + 15%</option>
+
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <select class="form-control" asp-for="Duration" id="Duration">
+                            <option value="">Duration</option>
+                            <option value="20,000">2 mouths</option>
+                            <option value="50,000">5 mouths</option>
+                            <option value="100,000">10 mouths</option>
+                            <option value="120,000">15 mouths</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="file" class="form-control" asp-for="Photo" name="file" id="subject" placeholder="Subject" required>
+                        <label asp-for="Photo"> Passport Size photo </label>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-floating">
+                        <input type="file" class="form-control" asp-for="CnicPhoto" name="cnicPhotoFile" id="subject" placeholder="Subject" required>
+                        <label asp-for="CnicPhoto"> CNIC Photo </label>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-primary py-3 px-5" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+
+</div>
+<!-- Contact End -->
